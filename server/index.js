@@ -13,10 +13,9 @@ const server = http.createServer(app);
 app.use(bodyParser.json()); //nangalimtan nim
 app.use(cors()); //FOR CROSS-ORIGIN
 severController(app, jwt, mongoose, secretkey);
-const users = {};
 const io = require("socket.io")(server);
 // this
-
+const users = {};
 io.on("connection", (socket) => {
   socket.emit("socID", socket.id);
   socket.on("new-user", (name) => {
