@@ -17,6 +17,7 @@ severController(app, jwt, mongoose, secretkey);
 const io = require("socket.io")(server);
 // this
 io.on("connection", (socket) => {
+  //
   socket.emit("socID", socket.id);
   // talking to another person
   socket.on("send message", (body) => {
